@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useEffect, useState } from "react";
 
-export default function App() {
+import { Text } from "react-native";
+import { ThemeProvider, theme } from "./theme";
+import Stack from "./Stack";
+
+function App() {
+  const [locationAvailable, setLocationAvailable] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkLocation = async () => {
+      try {
+        const value = await AsyncStorage.getItem("userDetails");
+        setLocationAvailable(value !== null);
+      } catch (e) {
+        setLocationAvailable(false);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkLocation();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      {loading && !locationAvailable && <Text>Loading...</Text>}
+      {!loading && <Stack locationAvailable={locationAvailable} />}
+    </ThemeProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

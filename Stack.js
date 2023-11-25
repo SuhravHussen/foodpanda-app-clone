@@ -12,7 +12,7 @@ export default function Stack({ locationAvailable }) {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={locationAvailable ? "Location" : "Location"}
+        initialRouteName={locationAvailable ? "Root" : "Location"}
       >
         <Stack.Screen
           name="Root"

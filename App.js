@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Text } from "react-native";
 import { ThemeProvider, theme } from "./theme";
 import Stack from "./Stack";
+import { StatusBar } from "expo-status-bar";
 
 function App() {
   const [locationAvailable, setLocationAvailable] = useState(false);
@@ -26,6 +27,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <StatusBar backgroundColor={theme.lightColors?.primary} />
+
       {loading && !locationAvailable && <Text>Loading...</Text>}
       {!loading && <Stack locationAvailable={locationAvailable} />}
     </ThemeProvider>

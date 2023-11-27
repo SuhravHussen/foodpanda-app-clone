@@ -14,6 +14,8 @@ import { theme } from "./theme";
 import Helpenter from "./screens/Root/Help-center";
 import ForBusiness from "./screens/Root/For-business";
 import Invite from "./screens/Root/Invite";
+import Title from "./components/Root/Header/Title";
+import CartIcon from "./components/Root/Header/CartIcon";
 function Root() {
   const Drawer = createDrawerNavigator();
 
@@ -25,6 +27,13 @@ function Root() {
         drawerActiveBackgroundColor: "transparent",
         drawerInactiveTintColor: "black",
         drawerInactiveBackgroundColor: "transparent",
+        headerTintColor: "#fff",
+        headerTitle: () => <Title />,
+        headerRight: () => <CartIcon />,
+        headerStyle: {
+          backgroundColor: theme.lightColors?.primary,
+        },
+
         drawerItemStyle: {
           // backgroundColor: "red",
           width: "100%",

@@ -1,6 +1,14 @@
-import { View, Text, StyleSheet } from "react-native";
+// @ts-nocheck
+
+import { View, Text, Image } from "react-native";
 import React from "react";
-import { theme } from "../../../../theme";
+import styles from "../../../../styles/screen/home/hero-styles";
+
+const foodDelivery = require("../../../../assets/images/foofpanda_hero_1.png");
+const shops = require("../../../../assets/images/foodpanda_hero_2.png");
+const dine = require("../../../../assets/images/foodpanda_hero_3.png");
+const pickup = require("../../../../assets/images/foodpanda_hero_4.png");
+const pandago = require("../../../../assets/images/foodpanda_hero_5.png");
 
 export default function Hero() {
   return (
@@ -8,63 +16,50 @@ export default function Hero() {
       {/* flex col  one*/}
       <View style={styles.col}>
         <View style={[styles.item, styles.item1]}>
-          <Text>Food Delivery</Text>
+          <Text style={styles.itemHeader}>Food Delivery</Text>
+          <Text style={styles.itemText}>
+            celebrEAT winter with exciting deals
+          </Text>
+          <Image source={foodDelivery} style={styles.itemOneImage} />
         </View>
         <View style={[styles.item, styles.item2]}>
-          <Text>Dine in</Text>
+          <View style={styles.item2Col1}>
+            <Text style={styles.itemHeader}>Dine in</Text>
+            <Text style={styles.itemText}>Go out to eat for 25% off</Text>
+          </View>
+
+          <View style={styles.item2Col2}>
+            <Image source={dine} style={styles.itemTwoImage} />
+          </View>
         </View>
       </View>
 
       {/* flex col two*/}
       <View style={styles.col}>
         <View style={[styles.item, styles.item3]}>
-          <Text>Shops</Text>
+          <Text style={styles.itemHeader}>Shops</Text>
+          <Text style={styles.itemText}>Top brand to your door</Text>
+          <Image source={shops} style={styles.itemThreeImage} />
         </View>
         <View style={[styles.item, styles.item4]}>
-          <Text>Pick up</Text>
+          <View style={styles.item4col1}>
+            <Text style={styles.itemHeader}>Pick up</Text>
+            <Text style={styles.itemText}>Self collect in 15 minutes</Text>
+          </View>
+          <View style={styles.item4col2}>
+            <Image source={pickup} style={styles.itemFourImage} />
+          </View>
         </View>
         <View style={[styles.item, styles.item5]}>
-          <Text>Pandago</Text>
+          <View style={styles.item5Col1}>
+            <Text style={styles.itemHeader}>Pandago</Text>
+            <Text style={styles.itemText}>Now available in multiple city</Text>
+          </View>
+          <View style={styles.item2Col2}>
+            <Image source={pandago} style={styles.itemFiveImage} />
+          </View>
         </View>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    marginTop: 65,
-    height: 335,
-    backgroundColor: "#F5F5F5",
-    padding: 22,
-    gap: 10,
-    flex: 1,
-    justifyContent: "center",
-  },
-  col: {
-    width: "50%",
-    gap: 10,
-  },
-  item: {
-    backgroundColor: theme.lightColors?.background,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#DEDEDE",
-  },
-  item1: {
-    height: "70%",
-  },
-  item2: {
-    height: "30%",
-  },
-  item3: {
-    height: "45%",
-  },
-  item4: {
-    height: "21%",
-  },
-  item5: {
-    height: "30%",
-  },
-});

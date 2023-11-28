@@ -1,33 +1,34 @@
 import React, { useRef, useState } from "react";
 import { View, Text, ScrollView, LayoutAnimation } from "react-native";
 import AnimatedSearchBar from "../../components/Root/Home/AnimatedSearchBar";
-import { theme } from "../../theme";
 import Hero from "../../components/Root/Home/Hero/Hero";
 const MyComponent = () => {
   const prevScrollY = useRef(0);
   const [topValue, setTopValue] = useState(0);
 
+  /* 
+   this detects if user is scrolling to bottom or down 
+   and make the search bar visible or hide 
+  */
   const onScroll = (event) => {
     const currentScrollY = event.nativeEvent.contentOffset.y;
     const scrollDelta = currentScrollY - prevScrollY.current;
 
-    if (scrollDelta > 3) {
+    if (scrollDelta > 4) {
       LayoutAnimation.configureNext({
-        duration: 300,
+        duration: 200,
         create: { type: "linear", property: "opacity" },
         update: { type: "linear", property: "opacity" },
         delete: { type: "linear", property: "opacity" },
       });
-
       setTopValue(-200);
-    } else if (scrollDelta < -3) {
+    } else if (scrollDelta < -4) {
       LayoutAnimation.configureNext({
-        duration: 300,
+        duration: 200,
         create: { type: "linear", property: "opacity" },
         update: { type: "linear", property: "opacity" },
         delete: { type: "linear", property: "opacity" },
       });
-
       setTopValue(0);
     }
 

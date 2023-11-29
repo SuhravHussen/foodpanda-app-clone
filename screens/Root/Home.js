@@ -2,14 +2,15 @@ import React, { useRef, useState } from "react";
 import { View, Text, ScrollView, LayoutAnimation } from "react-native";
 import AnimatedSearchBar from "../../components/Root/Home/AnimatedSearchBar";
 import Hero from "../../components/Root/Home/Hero/Hero";
+import Popular from "../../components/Root/Home/Popular/Popular";
 const MyComponent = () => {
-  const prevScrollY = useRef(0);
   const [topValue, setTopValue] = useState(0);
 
   /* 
    this detects if user is scrolling to bottom or down 
    and make the search bar visible or hide 
   */
+  const prevScrollY = useRef(0);
   const onScroll = (event) => {
     const currentScrollY = event.nativeEvent.contentOffset.y;
     const scrollDelta = currentScrollY - prevScrollY.current;
@@ -51,18 +52,10 @@ const MyComponent = () => {
         }}
       >
         <Hero />
+        <Popular />
         <Text
           style={{
             height: 300,
-            backgroundColor: "red",
-          }}
-        >
-          Scroll content
-        </Text>
-        <Text
-          style={{
-            height: 300,
-            backgroundColor: "blue",
           }}
         >
           Scroll content

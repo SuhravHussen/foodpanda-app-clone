@@ -3,6 +3,7 @@ import { View, Text, ScrollView, LayoutAnimation } from "react-native";
 import AnimatedSearchBar from "../../components/Root/Home/AnimatedSearchBar";
 import Hero from "../../components/Root/Home/Hero/Hero";
 import Popular from "../../components/Root/Home/Popular/Popular";
+import Cuisines from "../../components/Root/Home/Popular/Cuisines";
 const MyComponent = () => {
   const [topValue, setTopValue] = useState(0);
 
@@ -15,7 +16,7 @@ const MyComponent = () => {
     const currentScrollY = event.nativeEvent.contentOffset.y;
     const scrollDelta = currentScrollY - prevScrollY.current;
 
-    if (scrollDelta > 4) {
+    if (scrollDelta > 8) {
       LayoutAnimation.configureNext({
         duration: 200,
         create: { type: "linear", property: "opacity" },
@@ -53,13 +54,7 @@ const MyComponent = () => {
       >
         <Hero />
         <Popular />
-        <Text
-          style={{
-            height: 300,
-          }}
-        >
-          Scroll content
-        </Text>
+        <Cuisines />
       </ScrollView>
     </View>
   );

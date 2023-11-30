@@ -2,7 +2,7 @@
 import { View, Text, ScrollView, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import styles from "../../../../styles/screen/home/popular-styles";
-import getRestaurents from "../../../../lib/custom-hooks/getRestaurents";
+import getRestaurents from "../../../../lib/getRestaurents";
 
 export default function Popular() {
   const [popularRestaurants, setPopularRestaurants] = useState([]);

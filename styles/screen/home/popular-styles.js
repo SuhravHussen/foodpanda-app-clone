@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   allRestaurantsContainer: {
-    height: 250,
+    height: 220,
   },
   singleRestaurantContainer: {
     width: 245,

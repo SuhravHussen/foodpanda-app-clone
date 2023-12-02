@@ -3,7 +3,9 @@ import { View, Text, ScrollView, LayoutAnimation } from "react-native";
 import AnimatedSearchBar from "../../components/Root/Home/AnimatedSearchBar";
 import Hero from "../../components/Root/Home/Hero/Hero";
 import Popular from "../../components/Root/Home/Popular/Popular";
-import Cuisines from "../../components/Root/Home/Popular/Cuisines";
+import Cuisines from "../../components/Root/Home/Cuisines/Cuisines";
+import PickupNearYou from "../../components/Root/Home/Pickup/PickNearYou";
+import { theme } from "../../theme";
 const MyComponent = () => {
   const [topValue, setTopValue] = useState(0);
 
@@ -50,11 +52,13 @@ const MyComponent = () => {
         showsVerticalScrollIndicator={false}
         style={{
           zIndex: -1,
+          backgroundColor: theme.lightColors?.background,
         }}
       >
         <Hero />
         <Popular />
         <Cuisines />
+        <PickupNearYou />
       </ScrollView>
     </View>
   );

@@ -2,42 +2,35 @@ import { StyleSheet } from "react-native";
 import { theme } from "../../../theme";
 
 const styles = StyleSheet.create({
-  cuisineContainer: {
+  dailyDealsContainer: {
     backgroundColor: theme.lightColors?.background,
   },
   heading: {
-    padding: 15,
-    paddingTop: 10,
+    padding: 13,
+    paddingTop: 20,
     fontWeight: "bold",
     fontSize: 18,
   },
-  allCuisineContainer: {
+  allDealsContainer: {
     height: 220,
   },
-  singleCuisineContainer: {
-    width: 70,
-    height: 100,
+  singleDeal: {
+    width: 140,
+    height: 180,
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,
-  },
-  imageView: {
-    height: 70,
-    width: "100%",
     borderRadius: 10,
     overflow: "hidden",
+    borderWidth: 1,
+    borderColor: "lightgrey",
   },
+
   image: {
-    resizeMode: "contain",
-    height: "103%",
+    resizeMode: "stretch",
+    height: "100%",
     width: "100%",
     backgroundColor: "#FFFAFAFA",
-  },
-  title: {
-    fontWeight: "bold",
-    textAlign: "center",
-    fontSize: 12,
-    marginTop: 10,
   },
 });
 

@@ -3,7 +3,7 @@ import { theme } from "../../../theme";
 
 const styles = StyleSheet.create({
   pickupContainer: {
-    marginTop: -10,
+    marginTop: 10,
     backgroundColor: theme.lightColors?.background,
   },
   heading: {

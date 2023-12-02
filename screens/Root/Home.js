@@ -7,6 +7,7 @@ import Cuisines from "../../components/Root/Home/Cuisines/Cuisines";
 import PickupNearYou from "../../components/Root/Home/Pickup/PickNearYou";
 import { theme } from "../../theme";
 import DailyDeals from "../../components/Root/Home/DailyDeals/DailyDeals";
+import Shops from "../../components/Root/Home/Shops/Shops";
 const MyComponent = () => {
   const [topValue, setTopValue] = useState(0);
 
@@ -61,6 +62,7 @@ const MyComponent = () => {
         <Cuisines />
         <PickupNearYou />
         <DailyDeals />
+        <Shops />
       </ScrollView>
     </View>
   );

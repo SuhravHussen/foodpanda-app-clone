@@ -5,9 +5,6 @@ import { SearchBar } from "@rneui/themed";
 import { useState } from "react";
 import useTransition from "../../lib/custom-hooks/debounce";
 import { useNavigation } from "@react-navigation/native";
-// @ts-ignore
-import { GEOAPIFY_AUTOCOMPLETE_API } from "@env";
-
 import getLocation from "../../helpers/getLocationAccess";
 import styles from "../../styles/map-view/searchbar-styles";
 
@@ -22,7 +19,7 @@ export default function Searchbar() {
     startTransition(async () => {
       try {
         const res = await fetch(
-          `https://api.geoapify.com/v1/geocode/autocomplete?text=${text}&format=json&apiKey=${GEOAPIFY_AUTOCOMPLETE_API}&bias=countrycode:bd`
+          `https://api.geoapify.com/v1/geocode/autocomplete?text=${text}&format=json&apiKey=cdf1453f503b494cac74c13222e7b38d&bias=countrycode:bd`
         );
         const data = await res.json();
         const suggestions = data.results?.map((location) => {

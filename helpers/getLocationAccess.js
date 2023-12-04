@@ -1,6 +1,4 @@
 import * as Location from "expo-location";
-// @ts-ignore
-import { GEOCODE_API } from "@env";
 
 const getLocation = async () => {
   let { status } = await Location.requestForegroundPermissionsAsync();
@@ -12,7 +10,7 @@ const getLocation = async () => {
   let location = await Location.getCurrentPositionAsync({});
 
   const res = await fetch(
-    `https://api.opencagedata.com/geocode/v1/json?q=${location.coords.latitude}+${location.coords.longitude}&key=${GEOCODE_API}`
+    `https://api.opencagedata.com/geocode/v1/json?q=${location.coords.latitude}+${location.coords.longitude}&key=f253949d22b14328b407d5b5c87636d1`
   );
 
   const data = await res.json();

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Image, View } from "react-native";
 import MapView from "react-native-maps";
-// @ts-ignore
-import { GEOCODE_API } from "@env";
 import { Button } from "@rneui/themed";
 import AlertDialog from "../components/Mapview/Dialog";
 import { useNavigation } from "@react-navigation/native";
@@ -55,7 +53,7 @@ const Mapview = ({ route }) => {
     try {
       setLoading(true);
       const res = await fetch(
-        `https://api.opencagedata.com/geocode/v1/json?q=${region.latitude}+${region.longitude}&key=${GEOCODE_API}`
+        `https://api.opencagedata.com/geocode/v1/json?q=${region.latitude}+${region.longitude}&key=f253949d22b14328b407d5b5c87636d1`
       );
 
       const data = await res.json();

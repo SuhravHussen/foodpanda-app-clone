@@ -38,8 +38,4 @@
 
 ---
 
-![Drawer screen](images/ss6.jpg)
-
----
-
-## ![Logout ](screenshots/logoutscreen.png)
+![Drawer screen](screenshots/ss6.jpg)
